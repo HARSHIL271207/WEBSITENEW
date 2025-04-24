@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Sign In</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-image: url(bgimg.jpg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: #000000;
+      width: 90%;
+      max-width: 500px;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+      animation: floatUp 1s ease-out;
+      position: relative;
+    }
+
+    .logo-container {
+     
+      text-align: center;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1.2s ease-in-out;
+     
+    }
+
+    .logo-container img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+	    background-color: #000000;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #696969;
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #696969;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.85rem 2rem;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #6c63ff;
+      outline: none;
+      box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #6c63ff;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #5848e5;
+      transform: scale(1.02);
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #666;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .footer-text a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <!-- 🔻 Put your logo image here -->
+      <img src="logo.png" alt="Logo" />
+    </div>
+    <h2>Sign Up</h2>
+    <form method="post" action="signup.php">
+      <div class="input-group">
+        <label for="uname">Username</label>
+        <input type="uname" id="uname" placeholder="Enter your Username" required />
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
+      <button class="btn" type="submit">Sign Up</button>
+    </form>
+    <div class="footer-text">
+      Already have an account? <a href="sign in.html">Sign in</a>
+    </div>
+  </div>
+  <?php
+  include('sign in.php')
+  ?>
+</body>
+</html>
